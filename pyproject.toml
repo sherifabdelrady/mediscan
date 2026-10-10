@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "mediscan"
+version = "0.1.0"
+description = "Multi-label chest X-ray classification using DenseNet-121 with Focal Loss"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+  { name = "Sherif Abd El-Rady", email = "sherifabdelrady@gmail.com" },
+]
+keywords = ["medical-imaging", "computer-vision", "pytorch", "densenet"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "torch>=2.0",
+  "torchvision>=0.15",
+  "numpy",
+  "pillow",
+  "scikit-learn",
+  "matplotlib",
+  "grad-cam",
+  "onnx",
+  "onnxruntime",
+]
+
+[project.urls]
+Homepage = "https://sherifabdelrady.github.io/cv-portfolio/"
+Repository = "https://github.com/sherifabdelrady/mediscan"
+Issues = "https://github.com/sherifabdelrady/mediscan/issues"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
